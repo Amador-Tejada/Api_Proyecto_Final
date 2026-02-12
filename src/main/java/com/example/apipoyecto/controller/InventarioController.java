@@ -8,7 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+/**
+ * Controlador REST para gestionar el inventario de productos.
+ * Proporciona endpoints para listar el inventario y actualizar la cantidad disponible de un producto.
+ */
 @RestController
 @RequestMapping("/api/inventarios")
 @RequiredArgsConstructor

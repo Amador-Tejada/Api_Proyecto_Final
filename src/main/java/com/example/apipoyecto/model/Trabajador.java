@@ -9,6 +9,9 @@ import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+  * Entidad que representa a un trabajador en el sistema.
+  * Un trabajador puede tener múltiples trabajos asignados. */
 @Entity
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor

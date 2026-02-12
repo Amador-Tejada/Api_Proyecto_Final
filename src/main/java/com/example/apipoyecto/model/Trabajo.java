@@ -9,6 +9,10 @@ import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Entidad que representa un trabajo a realizar.
+ * Un trabajo está asociado a un cliente, un trabajador y puede tener múltiples tareas/productos relacionados.
+ */
 @Entity
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor

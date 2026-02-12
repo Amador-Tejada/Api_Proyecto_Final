@@ -6,6 +6,15 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
+/**
+ * Clase que representa la relación entre una tarea (trabajo) y un producto,
+ * indicando la cantidad de producto necesaria para completar la tarea.
+ * Utiliza una clave compuesta (TareaProductoId) para identificar
+ * de manera única cada relación entre trabajo y producto.
+ *
+ * Incluye validaciones para asegurar que los campos obligatorios estén presentes y que la cantidad sea positiva. */
+
+
 @Entity
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor

@@ -8,6 +8,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+/**
+ * Controlador REST para gestionar productos.
+ * Proporciona endpoints para crear, leer y eliminar productos.
+ */
 @RestController
 @RequestMapping("/api/productos")
 @RequiredArgsConstructor

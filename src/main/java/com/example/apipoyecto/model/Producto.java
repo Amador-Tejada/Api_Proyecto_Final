@@ -10,6 +10,11 @@ import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Entidad que representa un producto en el sistema. Cada producto está asociado a un inventario.
+ * Además, un producto puede estar relacionado con múltiples tareas a través de la entidad TareaProducto.
+ */
 @Entity
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor

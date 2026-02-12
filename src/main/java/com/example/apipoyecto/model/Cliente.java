@@ -9,6 +9,20 @@ import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Para crear la entidad Cliente se han definido los atributos y con LOMBOK
+ * se han generado los getters, setters, constructores y el builder.
+ * Se han aplicado validaciones a cada campo para asegurar que los datos ingresados sean correctos.
+ * La relación con la entidad Trabajo se ha establecido como OneToMany, indicando que un cliente puede tener múltiples trabajos.
+ *
+ * Se ha utilizado @JsonIgnore para evitar problemas de serialización al convertir a JSON.
+ *
+ * LOMBOK se utiliza para reducir codigo repetitivo, como getters, setters, constructores,
+ * lo que hace que el código sea más limpio y fácil de mantener.
+ */
+
+
+
 @Entity
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor

@@ -10,6 +10,10 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDate;
 import java.util.List;
 
+/*
+* Repositorio para la entidad Trabajo, que extiende JpaRepository para proporcionar métodos CRUD y consultas personalizadas.
+* Permite buscar trabajos por cliente, trabajador, estado, prioridad y rango de fechas programadas.
+* */
 @Repository
 public interface TrabajoRepository extends JpaRepository<Trabajo, Long> {
 

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/** * Controlador REST para gestionar trabajadores.
+ * Proporciona endpoints para crear, leer y eliminar trabajadores. */
 @RestController
 @RequestMapping("/api/trabajadores")
 @RequiredArgsConstructor

@@ -7,6 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+/* Repositorio para la entidad Cliente, que extiende JpaRepository para proporcionar métodos CRUD.
+ * Además, se definen métodos personalizados para buscar clientes por su correo electrónico y verificar
+ * su existencia.
+ */
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 

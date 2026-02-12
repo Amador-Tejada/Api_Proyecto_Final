@@ -11,6 +11,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Controlador REST para gestionar trabajos.
+ * Proporciona endpoints para crear, leer y eliminar trabajos.
+ *
+ * Cada trabajo está asociado a un cliente y un trabajador, por lo que se valida que ambos existan antes de crear un nuevo trabajo.
+ */
+
 @RestController
 @RequestMapping("/api/trabajos")
 @RequiredArgsConstructor
