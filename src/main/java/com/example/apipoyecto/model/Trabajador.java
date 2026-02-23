@@ -32,7 +32,6 @@ public class Trabajador {
 
     @OneToMany(mappedBy = "trabajador")
     @JsonIgnore
-    @Valid
     @Builder.Default
     private List<Trabajo> trabajos = new ArrayList<>();
 }

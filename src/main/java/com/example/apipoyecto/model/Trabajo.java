@@ -44,19 +44,15 @@ public class Trabajo {
 
     @NotNull(message = "El cliente es obligatorio")
     @ManyToOne
-    @JoinColumn(name = "cliente_id", nullable = false)
-    @Valid
+    @JoinColumn(name = "id_cliente", nullable = false)
     private Cliente cliente;
 
-    @NotNull(message = "El trabajador es obligatorio")
-    @ManyToOne
-    @JoinColumn(name = "trabajador_id", nullable = false)
-    @Valid
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "id_trabajador", nullable = true)
     private Trabajador trabajador;
 
     @OneToMany(mappedBy = "trabajo", cascade = CascadeType.ALL)
     @JsonIgnore
-    @Valid
     @Builder.Default
     private List<TareaProducto> tareasProductos = new ArrayList<>();
 }

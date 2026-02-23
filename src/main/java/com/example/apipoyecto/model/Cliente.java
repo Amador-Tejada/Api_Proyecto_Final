@@ -38,7 +38,7 @@ public class Cliente {
     private String nombre;
 
     @NotBlank(message = "El teléfono es obligatorio")
-    @Pattern(regexp = "^[+]?[(]?[0-9]{1,4}[)]?[-\\s./0-9]*$", message = "Teléfono con formato inválido")
+    @Pattern(regexp = "^[+]?[0-9\\s().-]{7,20}$", message = "El teléfono debe contener entre 7 y 20 caracteres (números, espacios, paréntesis, guiones o puntos)")
     private String telefono;
 
     @NotBlank(message = "La dirección es obligatoria")
@@ -46,13 +46,13 @@ public class Cliente {
     private String direccion;
 
     @NotBlank(message = "El correo electrónico es obligatorio")
-    @Email(message = "Correo electrónico con formato inválido")
+    @Email(message = "El correo electrónico debe tener un formato válido (ejemplo: usuario@dominio.com)")
+    @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "El correo electrónico debe tener un formato válido")
     @Column(unique = true)
     private String correoElectronico;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     @JsonIgnore
-    @Valid
     @Builder.Default
     private List<Trabajo> trabajos = new ArrayList<>();
 }

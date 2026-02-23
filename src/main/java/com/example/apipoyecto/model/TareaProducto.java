@@ -23,21 +23,18 @@ public class TareaProducto {
 
     @NotNull(message = "El ID de la tarea producto es obligatorio")
     @EmbeddedId
-    @Valid
     private TareaProductoId id;
 
     @NotNull(message = "El trabajo es obligatorio")
     @ManyToOne
     @MapsId("trabajoId")
     @JoinColumn(name = "trabajo_id")
-    @Valid
     private Trabajo trabajo;
 
     @NotNull(message = "El producto es obligatorio")
     @ManyToOne
     @MapsId("productoId")
     @JoinColumn(name = "producto_id")
-    @Valid
     private Producto producto;
 
     @NotNull(message = "La cantidad es obligatoria")
