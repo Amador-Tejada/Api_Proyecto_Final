@@ -7,7 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * DTO para Producto - usado en las peticiones y respuestas de la API.
+ * DTO para Producto.
+ * Contiene validaciones para los campos y se utiliza para transferir datos entre el cliente y el servidor.
  */
 @Data
 @NoArgsConstructor
