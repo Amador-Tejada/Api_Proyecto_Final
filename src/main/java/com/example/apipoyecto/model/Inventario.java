@@ -1,6 +1,7 @@
 package com.example.apipoyecto.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
@@ -26,6 +27,7 @@ public class Inventario {
     @NotNull(message = "El producto es obligatorio")
     @OneToOne
     @MapsId
+    @JsonIgnore
     @JoinColumn(name = "id")
     @Valid
     private Producto producto;

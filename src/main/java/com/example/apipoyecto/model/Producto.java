@@ -38,13 +38,13 @@ public class Producto {
     private String unidadMedida;
 
     @OneToOne(mappedBy = "producto", cascade = CascadeType.ALL)
+    @JsonIgnore
     @Valid
     private Inventario inventario;
 
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.REMOVE)
     @JsonIgnore
     @Valid
     @Builder.Default
     private List<TareaProducto> tareasProductos = new ArrayList<>();
 }
-

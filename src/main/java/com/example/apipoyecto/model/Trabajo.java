@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.*;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.dialect.PostgreSQLEnumJdbcType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,21 +38,21 @@ public class Trabajo {
 
     @NotNull(message = "El estado es obligatorio")
     @Enumerated(EnumType.STRING)
+    @JdbcType(PostgreSQLEnumJdbcType.class)
     private EstadoTrabajo estado;
 
     @NotNull(message = "La prioridad es obligatoria")
     @Enumerated(EnumType.STRING)
+    @JdbcType(PostgreSQLEnumJdbcType.class)
     private PrioridadTrabajo prioridad;
 
     @NotNull(message = "El cliente es obligatorio")
     @ManyToOne
-    @JoinColumn(name = "cliente_id", nullable = false)
     @Valid
     private Cliente cliente;
 
     @NotNull(message = "El trabajador es obligatorio")
     @ManyToOne
-    @JoinColumn(name = "trabajador_id", nullable = false)
     @Valid
     private Trabajador trabajador;
 
@@ -60,4 +62,3 @@ public class Trabajo {
     @Builder.Default
     private List<TareaProducto> tareasProductos = new ArrayList<>();
 }
-

@@ -11,9 +11,8 @@ import lombok.*;
  * indicando la cantidad de producto necesaria para completar la tarea.
  * Utiliza una clave compuesta (TareaProductoId) para identificar
  * de manera única cada relación entre trabajo y producto.
- *
- * Incluye validaciones para asegurar que los campos obligatorios estén presentes y que la cantidad sea positiva. */
-
+ * Incluye validaciones para asegurar que los campos obligatorios estén presentes y que la cantidad sea positiva.
+ */
 
 @Entity
 @Getter @Setter
@@ -29,14 +28,12 @@ public class TareaProducto {
     @NotNull(message = "El trabajo es obligatorio")
     @ManyToOne
     @MapsId("trabajoId")
-    @JoinColumn(name = "trabajo_id")
     @Valid
     private Trabajo trabajo;
 
     @NotNull(message = "El producto es obligatorio")
     @ManyToOne
     @MapsId("productoId")
-    @JoinColumn(name = "producto_id")
     @Valid
     private Producto producto;
 
@@ -44,4 +41,3 @@ public class TareaProducto {
     @Positive(message = "La cantidad debe ser mayor a cero")
     private Double cantidad;
 }
-

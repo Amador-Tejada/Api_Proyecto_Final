@@ -34,6 +34,14 @@ public class InventarioController {
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+        if (!inventarioRepository.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        inventarioRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }
 
 
