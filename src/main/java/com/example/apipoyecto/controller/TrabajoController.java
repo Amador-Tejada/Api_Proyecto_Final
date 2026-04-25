@@ -4,7 +4,6 @@ import com.example.apipoyecto.model.Trabajo;
 import com.example.apipoyecto.repository.ClienteRepository;
 import com.example.apipoyecto.repository.TrabajadorRepository;
 import com.example.apipoyecto.repository.TrabajoRepository;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,6 +44,10 @@ public class TrabajoController {
         if (trabajo.getCliente() == null || trabajo.getTrabajador() == null) {
             return ResponseEntity.badRequest().build();
         }
+        
+        if (trabajo.getFechaProgramada() == null) {
+            trabajo.setFechaProgramada(java.time.LocalDate.now()); // Proveemos un valor por defecto si falta
+        }
 
         // Si solo envían los IDs pero no los objetos completos, puede dar error 500 por validación
         if (trabajo.getCliente().getId() != null) {
@@ -78,6 +81,9 @@ public class TrabajoController {
             return ResponseEntity.ok(trabajoRepository.save(trabajoExistente));
         }).orElseGet(() -> {
             nuevoTrabajo.setId(id);
+            if (nuevoTrabajo.getFechaProgramada() == null) {
+                nuevoTrabajo.setFechaProgramada(java.time.LocalDate.now()); // Proveemos un valor por defecto si falta
+            }
             return ResponseEntity.status(HttpStatus.CREATED).body(trabajoRepository.save(nuevoTrabajo));
         });
     }
